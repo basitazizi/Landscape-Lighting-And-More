@@ -35,10 +35,10 @@ type TextInputProps = {
 
 function TextInput({ label, value, onChange, type = "text" }: TextInputProps) {
   return (
-    <label className="text-sm text-white/80">
+    <label className="text-sm text-gray-600">
       {label}
       <input
-        className="mt-2 h-12 w-full rounded-lg border border-white/10 bg-black px-4 text-white outline-none transition placeholder:text-white/35 focus:border-gold"
+        className="mt-2 h-12 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-gold"
         type={type}
         value={value}
         onChange={(event) => onChange(event.target.value)}
@@ -67,15 +67,15 @@ export default function Booking() {
           align="center"
         />
 
-        <div className="mt-12 rounded-lg border border-white/10 bg-white/[0.025] p-4 shadow-[0_0_80px_rgba(255,213,79,0.08)] sm:p-8">
+        <div className="mt-12 rounded-lg border border-gray-200 bg-white p-4 shadow-[0_0_80px_rgba(255,213,79,0.08)] sm:p-8">
           <div className="mb-8">
-            <div className="flex items-center justify-between gap-2 text-xs font-semibold uppercase text-white/60">
+            <div className="flex items-center justify-between gap-2 text-xs font-semibold uppercase text-gray-500">
               {steps.map((label, index) => (
                 <button
                   key={label}
                   type="button"
                   className={`rounded-lg px-2 py-2 transition ${
-                    index === step ? "bg-gold/10 text-gold" : "text-white/45 hover:text-white"
+                    index === step ? "bg-gold/10 text-gold" : "text-gray-400 hover:text-gray-900"
                   }`}
                   onClick={() => setStep(index)}
                 >
@@ -83,7 +83,7 @@ export default function Booking() {
                 </button>
               ))}
             </div>
-            <div className="mt-4 h-1 overflow-hidden rounded-full bg-white/10">
+            <div className="mt-4 h-1 overflow-hidden rounded-full bg-gray-200">
               <div
                 className="h-full rounded-full bg-gold shadow-[0_0_20px_rgba(255,213,79,0.8)] transition-all duration-300"
                 style={{ width: progress }}
@@ -94,7 +94,7 @@ export default function Booking() {
           <form className="min-h-[420px]" onSubmit={(event) => event.preventDefault()}>
             {step === 0 ? (
               <div>
-                <h2 className="text-2xl font-semibold text-white">Choose service</h2>
+                <h2 className="text-2xl font-semibold text-gray-900">Choose service</h2>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {services.map((service) => (
                     <label
@@ -102,7 +102,7 @@ export default function Booking() {
                       className={`cursor-pointer rounded-lg border p-5 transition ${
                         form.service === service.title
                           ? "border-gold bg-gold/10 shadow-[0_0_28px_rgba(255,213,79,0.16)]"
-                          : "border-white/10 bg-white/[0.02] hover:border-gold/40"
+                          : "border-gray-200 bg-gray-50 hover:border-gold/40"
                       }`}
                     >
                       <input
@@ -113,7 +113,7 @@ export default function Booking() {
                         checked={form.service === service.title}
                         onChange={(event) => update("service", event.target.value)}
                       />
-                      <span className="font-semibold text-white">{service.title}</span>
+                      <span className="font-semibold text-gray-900">{service.title}</span>
                       <span className="mt-2 block text-sm leading-6 text-soft">{service.short}</span>
                     </label>
                   ))}
@@ -123,12 +123,12 @@ export default function Booking() {
 
             {step === 1 ? (
               <div>
-                <h2 className="text-2xl font-semibold text-white">Project details</h2>
+                <h2 className="text-2xl font-semibold text-gray-900">Project details</h2>
                 <div className="mt-6 grid gap-4">
-                  <label className="text-sm text-white/80">
+                  <label className="text-sm text-gray-600">
                     Type
                     <select
-                      className="mt-2 h-12 w-full rounded-lg border border-white/10 bg-black px-4 text-white outline-none transition focus:border-gold"
+                      className="mt-2 h-12 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 text-gray-900 outline-none transition focus:border-gold"
                       value={form.propertyType}
                       onChange={(event) => update("propertyType", event.target.value)}
                     >
@@ -136,10 +136,10 @@ export default function Booking() {
                       <option>Business</option>
                     </select>
                   </label>
-                  <label className="text-sm text-white/80">
+                  <label className="text-sm text-gray-600">
                     Short description
                     <textarea
-                      className="mt-2 min-h-36 w-full rounded-lg border border-white/10 bg-black px-4 py-3 text-white outline-none transition placeholder:text-white/35 focus:border-gold"
+                      className="mt-2 min-h-36 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-gold"
                       placeholder="Tell us about the area, existing lighting, or goal for the project."
                       value={form.description}
                       onChange={(event) => update("description", event.target.value)}
@@ -151,21 +151,21 @@ export default function Booking() {
 
             {step === 2 ? (
               <div>
-                <h2 className="text-2xl font-semibold text-white">Date and time</h2>
+                <h2 className="text-2xl font-semibold text-gray-900">Date and time</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <label className="text-sm text-white/80">
+                  <label className="text-sm text-gray-600">
                     Date
                     <input
-                      className="mt-2 h-12 w-full rounded-lg border border-white/10 bg-black px-4 text-white outline-none transition focus:border-gold"
+                      className="mt-2 h-12 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 text-gray-900 outline-none transition focus:border-gold"
                       type="date"
                       value={form.date}
                       onChange={(event) => update("date", event.target.value)}
                     />
                   </label>
-                  <label className="text-sm text-white/80">
+                  <label className="text-sm text-gray-600">
                     Time
                     <input
-                      className="mt-2 h-12 w-full rounded-lg border border-white/10 bg-black px-4 text-white outline-none transition focus:border-gold"
+                      className="mt-2 h-12 w-full rounded-lg border border-gray-200 bg-gray-50 px-4 text-gray-900 outline-none transition focus:border-gold"
                       type="time"
                       value={form.time}
                       onChange={(event) => update("time", event.target.value)}
@@ -177,7 +177,7 @@ export default function Booking() {
 
             {step === 3 ? (
               <div>
-                <h2 className="text-2xl font-semibold text-white">Contact information</h2>
+                <h2 className="text-2xl font-semibold text-gray-900">Contact information</h2>
                 <div className="mt-6 grid gap-4">
                   <TextInput label="Name" value={form.name} onChange={(value) => update("name", value)} />
                   <TextInput
@@ -200,7 +200,7 @@ export default function Booking() {
           <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
             <button
               type="button"
-              className="min-h-12 rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold uppercase text-white transition hover:border-gold/60 hover:text-gold disabled:cursor-not-allowed disabled:opacity-35"
+              className="min-h-12 rounded-lg border border-gray-300 px-5 py-3 text-sm font-semibold uppercase text-gray-900 transition hover:border-gold/60 hover:text-gold disabled:cursor-not-allowed disabled:opacity-35"
               disabled={step === 0}
               onClick={() => setStep((value) => Math.max(0, value - 1))}
             >

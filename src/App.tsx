@@ -8,7 +8,7 @@ import Services from "./pages/Services";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-night text-white">
+    <div className="min-h-screen bg-night text-gray-900">
       <Navbar />
       <main>
         <Routes>

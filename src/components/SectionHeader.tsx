@@ -18,7 +18,7 @@ export default function SectionHeader({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-balance text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-balance text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {text ? <p className="mt-4 text-base leading-7 text-soft sm:text-lg">{text}</p> : null}

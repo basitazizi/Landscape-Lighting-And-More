@@ -15,7 +15,7 @@ export default function ButtonLink({
   const styles =
     variant === "primary"
       ? "border-gold bg-gold text-black shadow-[0_0_34px_rgba(255,213,79,0.34)] hover:bg-white hover:border-white"
-      : "border-white/20 bg-white/[0.03] text-white hover:border-gold/70 hover:text-gold";
+      : "border-gray-300 bg-white text-gray-900 hover:border-gold/70 hover:text-gold";
 
   return (
     <Link

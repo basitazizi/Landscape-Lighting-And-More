@@ -48,10 +48,10 @@ export default function Home() {
           <p className="mb-8 text-xs font-semibold uppercase text-gold">
             San Diego Outdoor Lighting
           </p>
-          <h1 className="text-balance text-5xl font-semibold leading-[0.88] text-white sm:text-7xl lg:text-8xl">
+          <h1 className="text-balance text-5xl font-semibold leading-[0.88] text-gray-900 sm:text-7xl lg:text-8xl">
             Illuminate Your Outdoor Space
           </h1>
-          <p className="mx-auto mt-9 max-w-2xl text-lg leading-8 text-white/80 sm:text-xl">
+          <p className="mx-auto mt-9 max-w-2xl text-lg leading-8 text-gray-600 sm:text-xl">
             Custom lighting design with a free night demonstration
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -85,10 +85,10 @@ export default function Home() {
             {services.slice(0, 3).map((service) => (
               <article
                 key={service.title}
-                className="group rounded-lg border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_0_45px_rgba(255,213,79,0.12)]"
+                className="group rounded-lg border border-gray-200 bg-gray-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_0_45px_rgba(255,213,79,0.12)]"
               >
                 <div className="mb-8 h-px w-16 bg-gold/70 shadow-[0_0_18px_rgba(255,213,79,0.7)] transition group-hover:w-24" />
-                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-soft">{service.short}</p>
               </article>
             ))}
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.02] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="border-y border-gray-200 bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1fr_0.8fr] md:items-center">
           <SectionHeader
             eyebrow="Consultation"
@@ -104,7 +104,7 @@ export default function Home() {
             text="See the design on your property before making a commitment."
           />
           <div className="rounded-lg border border-gold/25 bg-gold/[0.04] p-6 shadow-[0_0_55px_rgba(255,213,79,0.12)]">
-            <ul className="space-y-4 text-base text-white">
+            <ul className="space-y-4 text-base text-gray-900">
               {["We come to your property", "Show lighting setup live", "No commitment required"].map(
                 (item) => (
                   <li key={item} className="flex gap-3">
@@ -126,10 +126,10 @@ export default function Home() {
           <div>
             <SectionHeader eyebrow="Contact" title="Serving San Diego properties." />
             <div className="mt-8 space-y-3 text-lg">
-              <a className="block text-white transition hover:text-gold" href={business.phoneHref}>
+              <a className="block text-gray-900 transition hover:text-gold" href={business.phoneHref}>
                 {business.phone}
               </a>
-              <a className="block text-white transition hover:text-gold" href={business.emailHref}>
+              <a className="block text-gray-900 transition hover:text-gold" href={business.emailHref}>
                 {business.email}
               </a>
             </div>

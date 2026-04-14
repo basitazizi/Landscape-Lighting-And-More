@@ -16,11 +16,11 @@ export default function Services() {
           {services.map((service, index) => (
             <article
               key={service.title}
-              className={`grid gap-8 border-t border-white/10 pt-10 lg:grid-cols-2 lg:items-center ${
+              className={`grid gap-8 border-t border-gray-200 pt-10 lg:grid-cols-2 lg:items-center ${
                 index % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
               }`}
             >
-              <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]">
+              <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -32,7 +32,7 @@ export default function Services() {
                 <p className="mb-4 text-xs font-semibold uppercase text-gold">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h2 className="text-3xl font-semibold text-white sm:text-4xl">{service.title}</h2>
+                <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">{service.title}</h2>
                 <p className="mt-5 max-w-xl text-lg leading-8 text-soft">{service.description}</p>
                 <ButtonLink to="/booking" className="mt-8">
                   Book This Service

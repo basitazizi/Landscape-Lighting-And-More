@@ -23,7 +23,7 @@ export default function Navbar() {
             />
           </span>
           <span className="min-w-0 text-left">
-            <span className="block text-[0.72rem] font-semibold uppercase leading-none text-white sm:text-sm">
+            <span className="block text-[0.72rem] font-semibold uppercase leading-none text-gray-900 sm:text-sm">
               Landscape Lighting
             </span>
             <span className="mt-1 block text-[0.72rem] font-semibold uppercase leading-none text-gold sm:text-sm">
@@ -38,7 +38,7 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `nav-link ${isActive ? "nav-link-active" : "text-white/75"}`
+                `nav-link ${isActive ? "nav-link-active" : "text-gray-600"}`
               }
             >
               {link.label}
@@ -92,7 +92,7 @@ export default function Navbar() {
                   `mobile-nav-link ${
                     isActive
                       ? "border-gold/70 bg-gold/10 text-gold"
-                      : "border-white/10 bg-white/[0.03] text-white/75"
+                      : "border-gray-200 bg-gray-50 text-gray-600"
                 }`
               }
             >
